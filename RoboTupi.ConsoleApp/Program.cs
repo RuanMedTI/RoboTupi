@@ -16,6 +16,7 @@ namespace RoboTupi.ConsoleApp
 
                 opcao = Console.ReadLine();
 
+                //vai chamar o metodo e caso não exista na opcao mostrar a mensagem de opcao invalida
                 if (EhOpcaoInvalida(opcao))
                 {
                     Console.ForegroundColor = ConsoleColor.Yellow;
@@ -30,6 +31,7 @@ namespace RoboTupi.ConsoleApp
                 {
                     Console.WriteLine();
 
+                    //caso nao tenha nenhuma posicao inserida no robo, vai apresentar a mensagem
                     if (contadorPosicaoInserida == 0)
                     {
                         Console.WriteLine("Nenhuma posição foi inserida");
@@ -58,7 +60,7 @@ namespace RoboTupi.ConsoleApp
                 double primeiroX, primeiroY, segundoX, segundoY;
 
                 string orient, orientf;
-
+                //aqui esta recebendo os valores do usuario
                 Console.Write("Digite a posição inicial X do robô: ");
                 primeiroX = Convert.ToDouble(Console.ReadLine());
 
@@ -82,10 +84,13 @@ namespace RoboTupi.ConsoleApp
                 switch (opcao)
                 {
                     case "1":
+                        //se o primeiro valor informado no Y for menor que o segundo Y
+                        //o robo irá se mover seguindo o if
                         if (primeiroY < segundoY)
                         {
                             simboloMoviment = "E";
                         }
+                        //aqui da mesma maneira, mas com o valor do eixo x do robo
                         if (primeiroX < segundoX)
                         {
                             simboloMoviment = "M";
@@ -116,12 +121,12 @@ namespace RoboTupi.ConsoleApp
 
             }
         }
-
+        //opcoes 1 2 e S 
         private static bool EhOpcaoInvalida(string opcao)
         {
             return opcao != "1" && opcao != "2" && opcao != "S" && opcao != "s";
         }
-
+        //opcoes do menu do robo tupiniquim 
         private static void MostrarMenu()
         {
             Console.WriteLine("Robô Tupiniquim I");
