@@ -103,6 +103,12 @@ namespace RoboTupi.ConsoleApp
                 }
 
                 string posicaoInserida =
+                 segundoX.ToString() +
+                 segundoY.ToString() +
+                 orientf.ToString() +
+
+                 "---------------------------------" +
+
                  simboloMoviment +
                  simboloMoviment +
                  simboloMoviment;
